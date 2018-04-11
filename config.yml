@@ -1,0 +1,19 @@
+---
+# THEME GEM USAGE - visit https://github.com/Shopify/shopify_theme
+# Get your api_key and password at your-url.myshopify.com/admin/apps/private
+
+# example code
+# :api_key: ae2dbfc3a994e4ef16953557dec4a86f
+# :password: be4005b99ae187d101286976c305e2f0
+# :store: kiddie-gang.myshopify.com
+# :theme_id: 12109643841
+# :ignore_files:
+  # - settings_data.json
+  # - logo.png
+development:
+  password: fa3801abc710f4e05fc612b71e4ac5de
+  theme_id: 12086378561
+  store: kiddie-gang.myshopify.com
+  ignore_files:
+  # - settings_data.json
+  # - logo.png
