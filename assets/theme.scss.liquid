@@ -3666,6 +3666,8 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  background: white;
 }
 
 .header-banner {
@@ -4272,14 +4274,28 @@ $nav-button-padding: 15px;
   width: 100%;
   background: black;
   height: 45px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   .header_long_searchbar {
     display: flex;
-    width: 60%;
+    width: 100%;
+    padding-right: $gutter-site-mobile;
+    padding-left: $gutter-site-mobile;
     .searchbar {
       width: 100%;
+    }
+    .searchbar-btn {
+      background: #fcbb6a;
+    }
+  }
+}
+
+@include media-query($medium-up) {
+  .header_long_searchbar-container {
+    .header_long_searchbar {
+      width: 80%;
     }
   }
 }

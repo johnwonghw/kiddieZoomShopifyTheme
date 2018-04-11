@@ -16,7 +16,7 @@ assets/password.js:
 assets/theme.js:
   development: 2018-03-11T20:19:53-04:00   bad76a6baf81c2130b9d584d1fc3febc
 assets/theme.scss.liquid:
-  development: 2018-04-10T22:30:15-04:00   d438c5ecd045d523427ffeb7485328e0
+  development: 2018-04-10T22:52:00-04:00   0c08b52b21bf5188b0bd302a70b8f753
 assets/vendor.js:
   development: 2018-03-11T20:19:53-04:00   cb7c4217c9b6feb844647b361accfe6c
 config/settings_data.json:
@@ -72,7 +72,7 @@ sections/featured-product.liquid:
 sections/footer.liquid:
   development: 2018-03-11T20:19:51-04:00   ef65a6f1cfaeee88c73444df0b8f02b3
 sections/header.liquid:
-  development: 2018-04-10T22:30:54-04:00   70c61e6a67bd43e75502aa4a70dd5c1d
+  development: 2018-04-10T22:55:10-04:00   08542231f9e38b302adf915588d4d010
 sections/hero.liquid:
   development: 2018-03-11T20:19:51-04:00   d45cf37312b64d6e7511bdba56256758
 sections/image-bar.liquid:
