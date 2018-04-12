@@ -3279,6 +3279,35 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 /*================ Template | Collections ================*/
 
+.collection-page-container {
+  display: flex;
+  .collection-sidebar-container {
+    width: 30vw;
+    padding: 0 3vw 2vw 3vw;
+    .collection-sidebar-title {
+      text-align: center;
+      padding: 0.8vw;
+      background: #B2ECED;
+    }
+    .collection-sidebar {
+      border: 1px solid #ddd;
+      padding: 0.5vw;
+      min-height: 30vw;
+      .collection-wrapper {
+        padding: 0.8vw;
+        font-size: 15px;
+        .collection-type {
+          padding-left: 2vw;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .collection-products-container {
+    flex: 1
+  }
+}
+
 // Collection Hero
 //----------------------------------------
 .collection-hero {
@@ -4280,7 +4309,7 @@ $nav-button-padding: 15px;
   justify-content: center;
   .header_long_searchbar {
     display: flex;
-    width: 100%;
+    width: 80%;
     padding-right: $gutter-site-mobile;
     padding-left: $gutter-site-mobile;
     .searchbar {
@@ -4295,7 +4324,7 @@ $nav-button-padding: 15px;
 @include media-query($medium-up) {
   .header_long_searchbar-container {
     .header_long_searchbar {
-      width: 80%;
+      width: 60%;
     }
   }
 }
