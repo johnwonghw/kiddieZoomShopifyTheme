@@ -17,6 +17,41 @@
 
 {% paginate collection.products by limit %}
 
+<div class="collection-title-container">
+  {% if section.settings.show_collection_image and collection.image %}
+    <div class="collection-hero">
+      <div class="collection-hero__image ratio-container lazyload js"
+          data-bgset="{% include 'bgset', image: collection.image %}"
+          data-sizes="auto"
+          data-parent-fit="cover"
+          style="background-image: url('{{ collection.image | img_url: '300x300' }});"></div>
+      <noscript>
+        <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+      </noscript>
+      <div class="collection-hero__title-wrapper">
+        <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
+      </div>
+    </div>
+
+    {% if collection.description != blank %}
+      <div class="rte collection-description page-width">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="page-width">
+      <div class="section-header text-center">
+        <h1>{{ collection.title }}</h1>
+        {% if collection.description != blank %}
+          <div class="rte">
+            {{ collection.description }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
 <div class="collection-page-container">
   {% if section.settings.show_sidebar %}
     <div class="collection-sidebar-container">
@@ -24,15 +59,21 @@
       <div class="collection-sidebar">
         {% for collection in collections %}
           {% if collection.title %}
-          <div class="collection-wrapper"><a href="{{ collection.url }}">{{ collection.title }}</a>
+          <div class="collection-wrapper">
+            <div className="collection-name">
+              <a href="{{ collection.url }}">{{ collection.title }}</a>
+              <span class="type-toggler">+</span>
+            </div>
             {% comment %} <div class="collection-tags-container">
               {% for tag in collection.all_tags %}
                 <div class="collection-tag">{{ tag }}</div>
               {% endfor %}
             </div> {% endcomment %}
-            {% for product_type in collection.all_types %}
-              <div class="collection-type">{{ product_type | link_to_type }}</div>
-            {% endfor %}
+            <div class="collection-type-wrapper">
+              {% for product_type in collection.all_types %}
+                <div class="collection-type">{{ product_type | link_to_type }}</div>
+              {% endfor %}
+            </div>
           </div>
           {% endif %}
         {% endfor %}
@@ -41,40 +82,6 @@
   {% endif %}
   <div data-section-id="{{ section.id }}" data-section-type="collection-template" class="collection-products-container">
     <header class="collection-header">
-
-      {% if section.settings.show_collection_image and collection.image %}
-        <div class="collection-hero">
-          <div class="collection-hero__image ratio-container lazyload js"
-              data-bgset="{% include 'bgset', image: collection.image %}"
-              data-sizes="auto"
-              data-parent-fit="cover"
-              style="background-image: url('{{ collection.image | img_url: '300x300' }});"></div>
-          <noscript>
-            <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
-          </noscript>
-          <div class="collection-hero__title-wrapper">
-            <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
-          </div>
-        </div>
-
-        {% if collection.description != blank %}
-          <div class="rte collection-description page-width">
-            {{ collection.description }}
-          </div>
-        {% endif %}
-      {% else %}
-        <div class="page-width">
-          <div class="section-header text-center">
-            <h1>{{ collection.title }}</h1>
-            {% if collection.description != blank %}
-              <div class="rte">
-                {{ collection.description }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
-
       {% if section.settings.tags_enable or section.settings.sort_enable %}
         <div class="filters-toolbar-wrapper">
           <div class="page-width">

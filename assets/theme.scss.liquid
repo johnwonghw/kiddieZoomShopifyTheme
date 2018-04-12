@@ -3279,32 +3279,52 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 /*================ Template | Collections ================*/
 
-.collection-page-container {
-  display: flex;
-  .collection-sidebar-container {
-    width: 30vw;
-    padding: 0 3vw 2vw 3vw;
-    .collection-sidebar-title {
-      text-align: center;
-      padding: 0.8vw;
-      background: #B2ECED;
-    }
-    .collection-sidebar {
-      border: 1px solid #ddd;
-      padding: 0.5vw;
-      min-height: 30vw;
-      .collection-wrapper {
+
+@include media-query($medium-up) {
+  .collection-page-container {
+    display: flex;
+    .collection-sidebar-container {
+      width: 30vw;
+      padding: 0 3vw 2vw 3vw;
+      .collection-sidebar-title {
+        text-align: center;
         padding: 0.8vw;
-        font-size: 15px;
-        .collection-type {
-          padding-left: 2vw;
-          font-size: 13px;
+        background: #B2ECED;
+      }
+      .collection-sidebar {
+        border: 1px solid #ddd;
+        padding: 0.5vw;
+        min-height: 30vw;
+        .collection-wrapper {
+          padding: 0.8vw;
+          .collection-name {
+            font-size: 15px;  
+            .type-toggler {
+
+            }
+          }
+          .collection-type-wrapper {
+            display: none;
+            &.show {
+              display: block;
+            }
+            .collection-type {
+              padding-left: 2vw;
+              font-size: 13px;
+            }
+          }
         }
       }
     }
+    .collection-products-container {
+      flex: 1
+    }
   }
-  .collection-products-container {
-    flex: 1
+}
+
+@include media-query($small) {
+  .collection-sidebar-container {
+    display: none;
   }
 }
 
