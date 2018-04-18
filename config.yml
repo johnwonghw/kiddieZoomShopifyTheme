@@ -11,9 +11,9 @@
   # - settings_data.json
   # - logo.png
 development:
-  password: fa3801abc710f4e05fc612b71e4ac5de
-  theme_id: 12086378561
-  store: kiddie-gang.myshopify.com
+  password: c0b7c9571864d268449b49339f1fa896
+  theme_id: 14387413050
+  store: tots-and-crates.myshopify.com
   ignore_files:
   # - settings_data.json
   # - logo.png

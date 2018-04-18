@@ -1,11 +1,11 @@
 $(function() {
   $('body').on('click', '.type-toggler', function() {
-    $(this).closest('.collection-wrapper').find('.collection-type-wrapper').toggle('show')
-    if ($(this).closest('.collection-wrapper').find('.collection-type-wrapper').hasClass('show')) {
-      $(this).text('-')
-    } else {
+    if ($(this).closest('.collection-wrapper').find('.collection-type-wrapper').is(':visible')) {
       $(this).text('+')
+    } else {
+      $(this).text('-')
     }
+    $(this).closest('.collection-wrapper').find('.collection-type-wrapper').toggle('fast')
   })
 
   // jQuery('body').on('click', function() {

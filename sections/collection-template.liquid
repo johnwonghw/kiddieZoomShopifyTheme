@@ -60,7 +60,7 @@
         {% for collection in collections %}
           {% if collection.title %}
           <div class="collection-wrapper">
-            <div className="collection-name">
+            <div class="collection-name">
               <a href="{{ collection.url }}">{{ collection.title }}</a>
               <span class="type-toggler">+</span>
             </div>
@@ -69,11 +69,11 @@
                 <div class="collection-tag">{{ tag }}</div>
               {% endfor %}
             </div> {% endcomment %}
-            <div class="collection-type-wrapper">
+            <ul class="collection-type-wrapper">
               {% for product_type in collection.all_types %}
-                <div class="collection-type">{{ product_type | link_to_type }}</div>
+                <li class="collection-type">{{ product_type | link_to_type }}</li>
               {% endfor %}
-            </div>
+            </ul>
           </div>
           {% endif %}
         {% endfor %}

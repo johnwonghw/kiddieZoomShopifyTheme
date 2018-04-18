@@ -3287,29 +3287,28 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
       width: 30vw;
       padding: 0 3vw 2vw 3vw;
       .collection-sidebar-title {
+        font-size: 18px;
         text-align: center;
-        padding: 0.8vw;
+        padding: 1.2vw;
         background: #B2ECED;
       }
       .collection-sidebar {
         border: 1px solid #ddd;
-        padding: 0.5vw;
+        padding: 1.4vw 1vw;
         min-height: 30vw;
         .collection-wrapper {
-          padding: 0.8vw;
+          padding: 1.2vw;
           .collection-name {
             font-size: 15px;  
             .type-toggler {
-
+              cursor: pointer;
             }
           }
           .collection-type-wrapper {
-            display: none;
-            &.show {
-              display: block;
-            }
+            padding-left: 2vw;
+            display: none; //inital display state
             .collection-type {
-              padding-left: 2vw;
+              // list-style-type: disc;
               font-size: 13px;
             }
           }
@@ -3318,6 +3317,23 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
     }
     .collection-products-container {
       flex: 1
+    }
+  }
+}
+
+@include media-query($large-up) {
+  .collection-page-container {
+    .collection-sidebar-container {
+      width: 25vw;
+      .collection-sidebar-title {
+        text-align: center;
+        padding: 1.8vw 1.2vw;
+        background: #B2ECED;
+        font-size: 20px;
+      }
+      .collection-sidebar {
+        padding: 2vw 3vw;
+      }
     }
   }
 }
